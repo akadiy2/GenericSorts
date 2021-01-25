@@ -1,10 +1,14 @@
 package com.abe.operation.sort;
 
-public class BubbleSort<T extends Comparable<T>> implements Sort {
+public class BubbleSort<T extends Comparable<T>> extends Sort {
     private T [] arr;
 
     public BubbleSort(T [] arr) {
         this.arr = arr;
+    }
+
+    public BubbleSort() {
+        this(null);
     }
 
     public T[] getArr() {
@@ -21,4 +25,5 @@ public class BubbleSort<T extends Comparable<T>> implements Sort {
             }
         }
     }
+
 }

@@ -1,11 +1,8 @@
 package com.abe.operation.sort;
 
-public class QuickSort<T extends Comparable<T>> implements Sort {
+public class QuickSort<T extends Comparable<T>> extends Sort {
     private T [] arr;
 
-    public QuickSort(T [] arr) {
-        this.arr = arr;
-    }
 
     @Override
     public void doSort() {

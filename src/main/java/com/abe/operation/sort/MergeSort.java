@@ -1,10 +1,16 @@
 package com.abe.operation.sort;
 
-public class MergeSort implements Sort {
+
+
+public class MergeSort extends Sort {
     private int arr[];
 
-    public MergeSort(int arr[]) {
+    public MergeSort(int [] arr) {
         this.arr = arr;
+    }
+
+    public MergeSort() {
+        this(null);
     }
 
     @Override
@@ -52,8 +58,9 @@ public class MergeSort implements Sort {
         }
 
         while (i < left.length) {
-            i++;
+
             arr[k] = left[i];
+            i++;
             k++;
         }
 

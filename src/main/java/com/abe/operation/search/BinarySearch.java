@@ -2,18 +2,23 @@ package com.abe.operation.search;
 
 import com.abe.operation.sort.Sort;
 
-public class BinarySearch<T extends Comparable<T>> implements Search {
+@SuppressWarnings("ALL")
+public class BinarySearch<T extends Comparable<T>> extends Search {
     private Sort sort;
-    private T [] arr;
 
-    public BinarySearch(Sort s, T [] arr) {
-        this.sort = s;
-        this.arr = arr;
+    public BinarySearch(T[] arr, Sort sort) {
+        super(arr);
+        this.sort = sort;
     }
 
+    public BinarySearch() {}
+
+    public void setSort(Sort sort) {
+        this.sort = sort;
+    }
 
     @Override
-    public <T extends Comparable<T>> int search(T[] arr, T element) {
+    public int search(Comparable[] arr, Comparable element) {
         this.sort.doSort();
 
         int i = 0;

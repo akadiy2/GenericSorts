@@ -1,15 +1,10 @@
 package com.abe.operation.search;
 
 
-public class LinearSearch<T extends Comparable<T>> implements Search {
-
-    private T [] arr;
-    public LinearSearch(T [] arr) {
-        this.arr = arr;
-    }
+public class LinearSearch<T extends Comparable<T>> extends Search {
 
     @Override
-    public <T extends Comparable<T>> int search(T[] arr, T element) {
+    public int search(Comparable[] arr, Comparable element) {
         if (arr == null) {
             throw new IllegalArgumentException("Array input cannot be null");
         }

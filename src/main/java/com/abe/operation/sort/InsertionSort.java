@@ -1,16 +1,19 @@
 package com.abe.operation.sort;
 
-public class InsertionSort<T extends Comparable<T>> implements Sort {
-    private T [] arr;
+public class InsertionSort<T extends Comparable<T>> extends Sort {
+
 
     public InsertionSort(T [] arr) {
-        this.arr = arr;
+        super(arr);
+    }
+
+    public InsertionSort() {
     }
 
     @Override
     public void doSort() {
         for (int i = 1; i < arr.length; i++) {
-            T key = arr[i];
+            Comparable key = arr[i];
             int sortLast = i - 1;
 
             while (sortLast >= 0 && arr[sortLast].compareTo(key) > 0) {
