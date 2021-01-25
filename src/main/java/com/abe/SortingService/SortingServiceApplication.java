@@ -5,6 +5,7 @@ import com.abe.operation.search.BinarySearch;
 import com.abe.operation.search.LinearSearch;
 import com.abe.operation.search.Search;
 import com.abe.operation.sort.BubbleSort;
+import com.abe.operation.sort.InsertionSort;
 import com.abe.operation.sort.QuickSort;
 import com.abe.operation.sort.Sort;
 import org.springframework.boot.SpringApplication;
@@ -48,8 +49,8 @@ public class SortingServiceApplication {
 
 		System.out.println(Arrays.toString(arr));
 
-		Sort sort = new BubbleSort(arr);
-		Search s = new LinearSearch<>(arr);
+		Sort sort = new InsertionSort<>(arr);
+		Search s = new BinarySearch<>(sort, arr);
 
 		Student st = new Student();
 		st.setAge(23);
