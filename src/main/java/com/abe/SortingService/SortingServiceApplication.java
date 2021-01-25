@@ -46,31 +46,21 @@ public class SortingServiceApplication {
 
 		System.out.println(Arrays.toString(arr));
 
-
-//		InsertionSort sort = new InsertionSort(arr);
-//
-//		BinarySearch s = new BinarySearch(arr, sort);
-
-
 		Student st = new Student();
 		st.setAge(23);
 		st.setName("A3");
 
-		//System.out.println(s.search(arr,st));
-
-
-
-
-
-
 		Search binserch = SortSearchContext.getSearch("BINARY");
 		Sort insort = SortSearchContext.getSort("INSERTION");
-		((BinarySearch)binserch).setSort(insort);
+
+		if (binserch instanceof BinarySearch) {
+			((BinarySearch)binserch).setSort(insort);
+		}
+
 		binserch.setArr(arr);
 		insort.setArr(arr);
 
 		System.out.println(binserch.search(arr,st));
-
 		System.out.println(Arrays.toString(arr));
 	}
 
