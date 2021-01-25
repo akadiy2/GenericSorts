@@ -2,7 +2,6 @@ package com.abe.operation.search;
 
 
 public class LinearSearch<T extends Comparable<T>> extends Search {
-
     @Override
     public int search(Comparable[] arr, Comparable element) {
         if (arr == null) {

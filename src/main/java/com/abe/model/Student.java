@@ -16,10 +16,12 @@ public class Student implements Comparable {
     public int compareTo(Object o) {
         Student other = (Student) o;
 
+        int i = this.name.compareTo(other.getName());
+        if (i == 0) {
             return this.age - other.getAge();
+        }
 
-
-
+        return i;
     }
 
     @Override
