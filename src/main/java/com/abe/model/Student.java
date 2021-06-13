@@ -1,21 +1,13 @@
 package com.abe.model;
 
-
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.Objects;
 
-@Getter
-@Setter
-public class Student implements Comparable {
+public class Student implements Comparable<Student> {
     private String name;
     private int age;
 
     @Override
-    public int compareTo(Object o) {
-        Student other = (Student) o;
-
+    public int compareTo(Student other) {
         int i = this.name.compareTo(other.getName());
         if (i == 0) {
             return this.age - other.getAge();
@@ -26,7 +18,11 @@ public class Student implements Comparable {
 
     @Override
     public boolean equals(Object o) {
-        return this.compareTo(o) == 0;
+        if (!(o instanceof Student)) {
+            return false;
+        }
+
+        return this.compareTo((Student)o) == 0;
     }
 
     @Override
@@ -39,5 +35,21 @@ public class Student implements Comparable {
         StringBuilder sb = new StringBuilder();
         sb.append("Student with name: ").append(this.name).append(" with age: ").append(this.age);
         return sb.toString();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
